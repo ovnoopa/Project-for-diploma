@@ -8,7 +8,7 @@
 		<version>2.2.0.BUILD-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.project.for</groupId>
+	<groupId>com.project</groupId>
 	<artifactId>diplom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>diplom</name>
