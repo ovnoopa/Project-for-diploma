@@ -1,3 +1,20 @@
 body{
-    background-color: aqua;
+    background-color: #103851;  
+}
+table{
+    border: 1px solid white; 
+    color: white;
+    margin: auto;
+    width: 150px;
+   }
+   td {
+    text-align: center;
+}
+button{
+    margin-left: 50%;
+    margin-top: 5px;    
+}
+#chart_div{
+    margin: auto;
+    width: 500px;
 }
