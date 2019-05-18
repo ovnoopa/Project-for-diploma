@@ -3,12 +3,19 @@
 <head>
     <link rel="stylesheet" href="css/css.css" type="text/css"/>
     <script src="js/js.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/Chart.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
-    говно жопа
+    <table  id="tab1" class="sortable">
+        <tr><th>Камера</th><th>Ping</th></tr>
+        <tr><td>cam1</td><td>15</td></tr>
+    </table>
+    <button onclick="addRow()">Добавить</button>
+    <div id="chart_div"></div>
 </body>
 </html>
