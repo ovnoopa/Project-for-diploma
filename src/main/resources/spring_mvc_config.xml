@@ -11,7 +11,7 @@
 >
     <context:annotation-config/>
 
-    <mvc:resources mapping="/**/*.*" location="/"/>
+    <mvc:resources mapping="/*.*" location="/"/>
 
     <mvc:view-controller path="/" view-name="main.html"/>
 </beans>

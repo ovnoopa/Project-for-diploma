@@ -1,4 +1,4 @@
-package com.project.diplom.for.diplom;
+package com.project.diplom;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
