@@ -34,13 +34,13 @@ public class CameraServiceImpl implements CameraService {
 
     @Override
     @Transactional(readOnly = true)
-    public ResponseEntity<StreamingResponseBody> handleRequest() {
+    public ResponseEntity<StreamingResponseBody> handleRequest(CameraView cameraView) {
         {
 
             StreamingResponseBody responseBody = out -> {
 
-                //Process p = Runtime.getRuntime().exec("ping -t " + getCameraIp(cameraView));
-                Process p = Runtime.getRuntime().exec("ping -t google.com");
+                Process p = Runtime.getRuntime().exec("ping " + getCameraIp(cameraView));
+                //Process p = Runtime.getRuntime().exec("ping -t google.com");
                 InputStreamReader in = new InputStreamReader(p.getInputStream(), "866");
                 //String code = in.getEncoding();
                 BufferedReader inputStream = new BufferedReader(in);

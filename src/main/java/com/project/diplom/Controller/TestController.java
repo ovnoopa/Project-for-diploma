@@ -52,8 +52,8 @@ public class TestController {
             @ApiResponse(code = 500, message = "Failure")
     })
     @GetMapping("/ping")
-    public ResponseEntity<StreamingResponseBody> handleRequest(){
-        return cameraService.handleRequest();
+    public ResponseEntity<StreamingResponseBody> handleRequest(CameraView cameraView){
+        return cameraService.handleRequest(cameraView);
     }
 
 
