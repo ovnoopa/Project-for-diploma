@@ -45,15 +45,17 @@ public class TestController {
         cameraService.addCamera(cameraView);
     }
 
-    @ApiOperation(value = "Получить ping", httpMethod = "POST")
-    @ApiResponses(value = {
-            @ApiResponse(code = 200, message = "Success", response = String.class),
-            @ApiResponse(code = 400, message = "Not found"),
-            @ApiResponse(code = 500, message = "Failure")
-    })
+   /* @ApiOperation(value = "Получить ping", httpMethod = "GET")
     @GetMapping("/ping")
-    public ResponseEntity<StreamingResponseBody> handleRequest(CameraView cameraView){
-        return cameraService.handleRequest(cameraView);
+    public ResponseEntity<StreamingResponseBody> handleRequest(){
+        return cameraService.handleRequest();
+    }*/
+
+    @ApiOperation(value = "Получить ping", httpMethod = "GET")
+    @GetMapping("/ping")
+    public String getPing(){
+        //@RequestBody CameraView cameraView - cameraView во параметры
+        return cameraService.getPing();
     }
 
 

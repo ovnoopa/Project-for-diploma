@@ -32,15 +32,15 @@ public class CameraServiceImpl implements CameraService {
     }
 
 
-    @Override
+    /*@Override
     @Transactional(readOnly = true)
-    public ResponseEntity<StreamingResponseBody> handleRequest(CameraView cameraView) {
+    public ResponseEntity<StreamingResponseBody> handleRequest() {
         {
 
             StreamingResponseBody responseBody = out -> {
 
-                Process p = Runtime.getRuntime().exec("ping " + getCameraIp(cameraView));
-                //Process p = Runtime.getRuntime().exec("ping -t google.com");
+                //Process p = Runtime.getRuntime().exec("ping " + getCameraIp(cameraView));
+                Process p = Runtime.getRuntime().exec("ping google.com");
                 InputStreamReader in = new InputStreamReader(p.getInputStream(), "866");
                 //String code = in.getEncoding();
                 BufferedReader inputStream = new BufferedReader(in);
@@ -78,12 +78,46 @@ public class CameraServiceImpl implements CameraService {
 
             return new ResponseEntity(responseBody, HttpStatus.OK);
         }
-    }
+    }*/
 
     @Override
+    public String getPing() {
+        //CameraView cameraView
+        //Camera cameraIp = dao.getCameraByName(cameraView.name);
+        String time = "";
+        String generalTime = "";
+        try {
+            //Process p = Runtime.getRuntime().exec("ping " + cameraIp);
+            Process p = Runtime.getRuntime().exec("ping google.com");
+            BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream(),"866"));
+            int beginIndex;
+            int endIndex;
+            while ((time = inputStream.readLine()) != null) {
+                if (time.length() > 0 && time.contains("время")) {
+                    beginIndex = time.indexOf("время");
+                    endIndex = time.indexOf("TTL");
+                    time = time.substring(beginIndex, endIndex);
+                    if(time.contains("время"))
+                    {
+                        beginIndex = time.indexOf("=") + 1;
+                        endIndex = time.indexOf("мс");
+                        time = time.substring(beginIndex, endIndex);
+                    }generalTime = generalTime + " " + time;
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return generalTime;
+    }
+
+
+    /*@Override
     public String getCameraIp(CameraView cameraView) {
         Camera camera = dao.getCameraByName(cameraView.name);
         String address_ip = camera.getAddress_ip();
         return  address_ip;
-    }
+    }*/
 }

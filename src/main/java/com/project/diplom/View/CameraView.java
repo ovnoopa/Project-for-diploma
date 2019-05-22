@@ -22,10 +22,6 @@ public class CameraView {
 
     @Override
     public String toString() {
-        return "CameraView{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", address_ip='" + address_ip + '\'' +
-                '}';
+        return "{id:" + id  + ";name:" + name + ";address_ip:" + address_ip + "}";
     }
 }

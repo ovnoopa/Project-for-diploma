@@ -7,6 +7,8 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 
 public interface CameraService {
     void addCamera(CameraView cameraView);
-    String getCameraIp(CameraView cameraView);
-    ResponseEntity<StreamingResponseBody> handleRequest(CameraView cameraView);
+    //String getCameraIp(CameraView cameraView);
+    //ResponseEntity<StreamingResponseBody> handleRequest();
+    String getPing();//CameraView cameraView
+
 }
