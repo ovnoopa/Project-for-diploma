@@ -1,6 +1,7 @@
 package com.project.diplom.Dao;
 
 import com.project.diplom.Model.Camera;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 

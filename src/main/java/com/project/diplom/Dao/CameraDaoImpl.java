@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -12,6 +13,8 @@ import javax.persistence.criteria.Root;
 
 @Repository
 public class CameraDaoImpl implements CameraDao {
+
+
     private final EntityManager em;
 
     @Autowired

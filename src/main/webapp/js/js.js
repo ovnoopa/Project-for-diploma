@@ -1,11 +1,20 @@
-
 var d = document;
-var cam = "cam2";
-var ping = "69";
+var cam = 'govno';
+var ping;
 
-function addRow()
-{
-    // Находим нужную таблицу
+
+$(document).ready(function () {
+    $("#ping").click(function () {
+        $.ajax({
+            url:"/ping",
+            type:"GET",
+            contentType:"application/json; charset=utf-8",
+            dataType:"text",
+            success: function(result){
+                ping = result;
+                console.log(result);
+                alert(result);
+                    // Находим нужную таблицу
     var tbody = d.getElementById('tab1').getElementsByTagName('TBODY')[0];
 
     // Создаем строку таблицы и добавляем ее
@@ -23,4 +32,8 @@ function addRow()
     // Наполняем ячейки
     td1.innerHTML = cam;
     td2.innerHTML = ping;
-}
+            }
+        });
+    });
+    });
+    
